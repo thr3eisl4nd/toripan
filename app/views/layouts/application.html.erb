@@ -4,12 +4,126 @@
     <title>Toripan</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <%= link_to image_tag('logo.png', height: '59', width: '70', alt: "ブランド画像"), root_path %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "Toripanとは", "", class: "nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "お知らせ", "", class: "nav-link"%>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ご予約
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">お店からのお願い</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <% if user_signed_in? %>
+          <li class="nav-item"><%= link_to current_user.nickname, '', class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to "ログイン", new_user_session_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "新規登録", new_user_registration_path, class: "nav-link" %></li>
+        <% end %>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
     <%= yield %>
+<footer class="text-center text-white" style="background-color: #f1f1f1;">
+  <!-- Grid container -->
+  <div class="container pt-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+      <!-- Github -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      ©︎<%= link_to "Toripan", root_path, class: "text-muted"%>
+    </div>
+  </footer>
+</footer>
   </body>
 </html>

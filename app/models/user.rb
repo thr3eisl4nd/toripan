@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :comments
 
   with_options presence: true do
-    validates :nickname, format: { with: /\A[ァ-ヴー]+\z/, message: 'is invalid. Input full-width katakana characters.' }
+    validates :nickname, format: { with: /\A[ぁ-ゔァ-ヴ\p{Ideographic}ａ-ｚＡ-Ｚ０-９]+\z/, message: 'is invalid. Input full-width characters.' }
     validates :family_name, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'is invalid. Input full-width character.' }
     validates :first_name, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'is invalid. Input full-width character.' }
     validates :phonenumber, format: { with: /\A[0-9]{10,11}\z/, message: 'Input only number' }

@@ -1,5 +1,5 @@
 User.create!( 
-  nickname: "管理者",
+  nickname: "アドミン",
   email: "adminnansuca@exmaple.jp",
   password: "iSOmaru0butter",
   password_confirmation: "iSOmaru0butter",

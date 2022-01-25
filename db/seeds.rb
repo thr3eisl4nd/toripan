@@ -1,4 +1,4 @@
-User.create!(
+User.create!( 
   nickname: "管理者",
   email: "adminnansuca@exmaple.jp",
   password: "iSOmaru0butter",

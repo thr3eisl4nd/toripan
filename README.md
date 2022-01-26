@@ -20,13 +20,14 @@
 
 ## itemsテーブル
 
-| Column      | Type    | Options     |
-| ----------- | ------  | ----------- |
-| name        | string  | null: false |
-| text        | string  | null: false |
-| category_id | integer | null: false |
-| price       | integer | null: false |
-| stock       | integer | null: false |
+| Column      | Type       | Options           |
+| ----------- | ---------  | ----------------- |
+| name        | string     | null: false       |
+| text        | string     | null: false       |
+| category_id | integer    | null: false       |
+| price       | integer    | null: false       |
+| stock       | integer    | null: false       |
+| user        | references | foreign_key: true |
 
 ## Association
 

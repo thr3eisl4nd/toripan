@@ -1,78 +1,15 @@
-.container {
-  color: #666666;
-  width: auto;
-  max-width: 680px;
-  padding: 0 15px;
-}
-
-.container a {
- color: #212529;
- text-decoration: none;
-}
-
-.form-floating {
-  width: 100%;
-  min-width: 800px;
-  height: 100%;
-  background-color: #f5f5f5;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.field {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding-top: 20px;
-}
-
-.field:first-child {
-  padding: 0;
-}
-
-.input-default {
-  width: 100%;
-  margin-top: 5px;
-  height: 48px;
-  padding: 10px 16px 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-  font-size: 16px;
-  resize: none;
-}
-
-.actions {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.push-btn {
-    display       : inline-block;
-    border-radius : 5%;          /* 角丸       */
-    font-size     : 18pt;        /* 文字サイズ */
-    text-align    : center;      /* 文字位置   */
-    cursor        : pointer;     /* カーソル   */
-    padding       : 12px 12px;   /* 余白       */
-    background    : #f8f9fa;     /* 背景色     */
-    color         : #8ac6d1;     /* 文字色     */
-    line-height   : 1em;         /* 1行の高さ  */
-    transition    : .3s;         /* なめらか変化 */
-    border        : 2px solid #8ac6d1;    /* 枠の指定 */
-}
-
-.bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
-}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */

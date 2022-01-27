@@ -19,26 +19,27 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <%= link_to "Toripanとは", "", class: "nav-link active" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "お知らせ", "", class: "nav-link"%>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            ご予約
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">お店からのお願い</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
-        </li>
+        <% if user_signed_in? && current_user.admin? %>
+          <li class="nav-item">
+            <%= link_to "商品登録", new_item_path, class: "nav-link" %>
+          </li>
+        <% end %>
+            <%= link_to "Toripanとは", "", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "お知らせ", "", class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              ご予約
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">お店からのお願い</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
       </ul>
       <ul class="navbar-nav">
         <% if user_signed_in? %>
@@ -51,57 +52,16 @@
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-secondary" type="submit">Search</button>
       </form>
     </div>
   </div>
 </nav>
     <%= yield %>
-<footer class="text-center text-white" style="background-color: #f1f1f1;">
 
-  <div class="container pt-4">
-
-    <section class="mb-4">
-
-      <a
-        class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#!"
-        role="button"
-        data-mdb-ripple-color="dark"
-        ><i class="fab fa-facebook-f"></i
-      ></a>
-
-      <a
-        class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#!"
-        role="button"
-        data-mdb-ripple-color="dark"
-        ><i class="fab fa-twitter"></i
-      ></a>
-
-      <a
-        class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#!"
-        role="button"
-        data-mdb-ripple-color="dark"
-        ><i class="fab fa-google"></i
-      ></a>
-
-      <a
-        class="btn btn-link btn-floating btn-lg text-dark m-1"
-        href="#!"
-        role="button"
-        data-mdb-ripple-color="dark"
-        ><i class="fab fa-instagram"></i
-      ></a>
-    </section>
+    <div class="fixed-bottom mt-auto py-3 bg-light text-center">
+      ©︎ 2022 <%= link_to "Toripan", root_path, class: "text-muted"%>
+    </div>
   </div>
 
-  <footer class="footer mt-auto py-3 bg-light">
-    <div class="container">
-      ©︎<%= link_to "Toripan", root_path, class: "text-muted"%>
-    </div>
-  </footer>
-</footer>
-  </body>
 </html>

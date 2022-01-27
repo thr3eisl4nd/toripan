@@ -1,0 +1,7 @@
+.text-muted {
+  text-decoration: none;
+}
+
+.text-muted:hover {
+  color: #212529 !important;
+}

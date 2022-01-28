@@ -40,7 +40,7 @@
         <% @items.each do |item| %>
           <div class="col-12 col-md-6 col-lg-4">
             <div class="card" style="width: 18rem;">
-                <%=link_to image_tag(item.image, class: "card-img-top"), "#" %>
+                <%=link_to image_tag(item.image, class: "card-img-top"), item_path(item.id) %>
                   <div class="card-body">
                     <%= item.name %>
                   <div class="card-text">
@@ -51,7 +51,9 @@
                   </div>
                   <% end %>
                   </div>
+                    <% if user_signed_in? %>
                     <a href="#" class="btn btn-outline-secondary btn-sm">カートに入れる</a>
+                    <% end %>
                   </div>
             </div>
           </div>

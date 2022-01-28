@@ -1,0 +1,12 @@
+<div class="card mt-2" style="width: 44rem;">
+  <%= image_tag @item.image, class:"card-img-top" %>
+  <div class="card-body">
+    <h5 class="card-title"><%= @item.name %></h5>
+    <p class="card-text"><small>¥<%= @item.price %>(税込)</small></p>
+    <p class="card-text"><%= simple_format(@item.text) %></p>
+    <%= link_to "カートに入れる", "", class: "btn btn-outline-secondary btn-sm" %>
+  <% if user_signed_in? && current_user.admin? %>
+    <%= link_to "編集する", "", class: "btn btn-sm btn-outline-secondary" %>
+  <% end %>
+  </div>
+</div>

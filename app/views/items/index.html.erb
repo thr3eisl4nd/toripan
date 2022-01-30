@@ -45,11 +45,6 @@
                     <%= item.name %>
                   <div class="card-text">
                     ¥<%= item.price %>(税込)
-                  <% if user_signed_in? && current_user.admin? %>
-                  <div class="card-text">
-                    <%= link_to "編集する", "", class: "btn btn-sm btn-outline-secondary" %>
-                  </div>
-                  <% end %>
                   </div>
                     <% if user_signed_in? %>
                     <a href="#" class="btn btn-outline-secondary btn-sm">カートに入れる</a>

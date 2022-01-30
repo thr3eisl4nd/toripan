@@ -1,85 +1,34 @@
- <div class="items-sell-main">
-    <h2 class="items-sell-title">商品の情報を入力</h2>
-    <%= form_with model: @item, local: true do |f| %>
-
+  <div class="col-md-4 offset-md-4">
+    <%= form_with(model: @item, local: true) do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
-
-    <%# 商品画像 %>
-    <div class="img-upload">
-      <div class="weight-bold-text">
-        商品画像
-        <span class="indispensable">必須</span>
+      <div class="form-group pt-4 pd-3">
+        <p><label for="form-file">商品画像</label></p>
+        <p>クリックしてファイルをアップロード</p>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1">
       </div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :image, id:"item-image" %>
+      <div class="form-group pt-4 pd-3">
+        <label for="name">商品名</label>
+        <%= f.text_field :name, class: "form-control", placeholder: "商品名 (必須 20文字まで)", maxlength: "20" %>
       </div>
-    </div>
-    <%# /商品画像 %>
-    <%# 商品名と商品説明 %>
-    <div class="new-items">
-      <div class="weight-bold-text">
-        商品名
-        <span class="indispensable">必須</span>
+      <div class="form-group pt-4 pd-3">
+        <label for="text">商品の説明</label>
+        <%= f.text_area :text, class: "form-control", rows: 5, placeholder: "商品の説明(必須 256文字まで)", maxlength: "256" %>
       </div>
-      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
-      <div class="items-explain">
-        <div class="weight-bold-text">
-          商品の説明
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :text, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+      <div class="form-group pt-4 pd-3">
+        <label for="category">商品のカテゴリー</label>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "form-control"})  %>
       </div>
-    </div>
-    <%# /商品名と商品説明 %>
-
-    <%# 商品の詳細 %>
-    <div class="items-detail">
-      <div class="weight-bold-text">商品の詳細</div>
-      <div class="form">
-        <div class="weight-bold-text">
-          カテゴリー
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      <div class="form-group pt-4 pd-3 col-md-4">
+        <label for="price">価格(税込)</label>
+        <p><%= f.text_field :price, class: "form-control", placeholder: "例)280" %><p>
       </div>
-    </div>
-    <%# /商品の詳細 %>
-
-    <%# 在庫数 %>
-    <div class="new-items">
-      <div class="weight-bold-text">
-        在庫数
-        <span class="indispensable">必須</span>
+      <div class="form-group pt-4 pd-3 col-md-4">
+        <label for="stock">在庫</label>
+        <p><%= f.text_field :stock, class: "form-control", placeholder: "例)2" %><p>
       </div>
-      <%= f.text_area :stock, class:"items-text", id:"item-name", placeholder:"数字のみ" %>
-    <%# /在庫数 %>
-
-    <%# 販売価格 %>
-    <div class="sell-price">
-      <div class="weight-bold-text question-text">
-        <span>販売価格<br>(¥300〜9,999,999)</span>
-        <a class="question" href="#">?</a>
+      <div class="text-center mb-3">
+      <%= f.submit "登録する", class: "btn btn-outline-secondary" %>
+      <%= link_to "戻る", root_path, class: "btn btn-outline-secondary" %>
       </div>
-      <div>
-        <div class="price-content">
-          <div class="price-text">
-            <span>価格</span>
-            <span class="indispensable">必須</span>
-          </div>
-          <span class="sell-yen">¥</span>
-          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）300" %>
-        </div>
-    </div>
-    <%# /販売価格 %>
-
-    <%# 下部ボタン %>
-    <div class="sell-btn-contents">
-      <%= f.submit "登録する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
-    </div>
-    <%# /下部ボタン %>
+    <% end %>
   </div>
-  <% end %>

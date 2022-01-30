@@ -44,21 +44,6 @@
   resize: none;
 }
 
-.actions {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.push-btn {
-    display       : inline-block;
-    border-radius : 5%;          /* 角丸       */
-    font-size     : 18pt;        /* 文字サイズ */
-    text-align    : center;      /* 文字位置   */
-    cursor        : pointer;     /* カーソル   */
-    padding       : 12px 12px;   /* 余白       */
-    background    : #f8f9fa;     /* 背景色     */
-    color         : #8ac6d1;     /* 文字色     */
-    line-height   : 1em;         /* 1行の高さ  */
-    transition    : .3s;         /* なめらか変化 */
-    border        : 2px solid #8ac6d1;    /* 枠の指定 */
+.form-check {
+  font-weight: normal !important;
 }

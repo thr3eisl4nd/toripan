@@ -13,7 +13,7 @@
 ## テスト用アカウント
 
 - Basic認証
-  - username: toripan
+  - username: t0ripAn
   - password: adm1nApir0t
 
 - Admin

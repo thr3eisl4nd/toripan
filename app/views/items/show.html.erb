@@ -4,9 +4,13 @@
     <h5 class="card-title"><%= @item.name %></h5>
     <p class="card-text"><small>¥<%= @item.price %>(税込)</small></p>
     <p class="card-text"><%= simple_format(@item.text) %></p>
-    <%= link_to "カートに入れる", "", class: "btn btn-outline-secondary btn-sm" %>
   <% if user_signed_in? && current_user.admin? %>
     <%= link_to "編集する", edit_item_path(@item.id), class: "btn btn-sm btn-outline-secondary" %>
+    <%= link_to "削除する", item_path(@item.id), method: :delete, class: "btn btn-sm btn-outline-secondary" %>
+  <% else %>
+    <% if user_signed_in? %>
+      <%= link_to "カートに入れる", "", class: "btn btn-outline-secondary btn-sm" %>  
+    <% end %>
   <% end %>
   </div>
 </div>

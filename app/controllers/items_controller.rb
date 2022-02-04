@@ -37,6 +37,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy if user_signed_in? && current_user.admin?
+    redirect_to root_path
   end
 
   private

@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container-fluid">
+    <%= link_to image_tag('logo.png', height: '59', width: '70', alt: "ブランド画像"), root_path %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <% if user_signed_in? && current_user.admin? %>
+          <li class="nav-item">
+            <%= link_to "商品登録", new_item_path, class: "nav-link" %>
+          </li>
+        <% end %>
+            <%= link_to "Toripanとは", items_path(anchor: "about"), class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "アクセス", items_path(anchor: "access"), class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              ご予約
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">ご予約方法</a></li>
+              <li><%= link_to "商品一覧", items_path(anchor: "itemlist"), class: "dropdown-item" %></li>
+            </ul>
+          </li>
+      </ul>
+      <ul class="navbar-nav">
+        <% if user_signed_in? %>
+          <li class="nav-item"><%= link_to current_user.nickname, '', class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to "ログイン", new_user_session_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "新規登録", new_user_registration_path, class: "nav-link" %></li>
+        <% end %>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-secondary" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>

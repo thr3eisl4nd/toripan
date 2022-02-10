@@ -59,7 +59,7 @@ https://docs.google.com/spreadsheets/d/1l2fZbjca_oFqyd7QZ-imrumt2JikuUGyae6dKnfY
 [![Image from Gyazo](https://i.gyazo.com/943ec734ea89a83e0fdea741aaa77770.jpg)](https://gyazo.com/943ec734ea89a83e0fdea741aaa77770)
 ***
 ## 画面遷移図
-[![Image from Gyazo](https://i.gyazo.com/495b4b3df90bf690efdb5837e3f3ff48.png)](https://gyazo.com/495b4b3df90bf690efdb5837e3f3ff48)
+[![Image from Gyazo](https://i.gyazo.com/251094fb6378edde8235fbaa28887841.png)](https://gyazo.com/251094fb6378edde8235fbaa28887841)
 ***
 ## 開発環境
 

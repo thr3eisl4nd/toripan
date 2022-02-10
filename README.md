@@ -108,6 +108,20 @@ https://docs.google.com/spreadsheets/d/1l2fZbjca_oFqyd7QZ-imrumt2JikuUGyae6dKnfY
 - has_many :comments
 - has_many :item_allergies
 
+## cartsテーブル
+
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| quantity    | integer    | null: false                    |
+| user_id     | references | null: false, foreign_key: true |
+| item_id     | references | null: false, foreign_key: true |
+
+
+## Association
+
+- belongs_to : user
+- has_many : : items
+
 ## reservationsテーブル
 
 | Column       | Type       | Options                        |

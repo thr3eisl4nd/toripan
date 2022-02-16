@@ -92,8 +92,7 @@ https://docs.google.com/spreadsheets/d/1l2fZbjca_oFqyd7QZ-imrumt2JikuUGyae6dKnfY
 | admin              | boolean |             |
 
 ## Association
-
-- has_many :items
+- has_one :cart, dependent: :destroy
 - has_many :reservations
 - has_many :room_users
 - has_many :messages
@@ -112,7 +111,7 @@ https://docs.google.com/spreadsheets/d/1l2fZbjca_oFqyd7QZ-imrumt2JikuUGyae6dKnfY
 
 ## Association
 
-- belongs_to : user
+- has_many :cart_items, dependent: :destroy
 - has_many :item_categories
 - has_many :comments
 - has_many :item_allergies
@@ -121,15 +120,26 @@ https://docs.google.com/spreadsheets/d/1l2fZbjca_oFqyd7QZ-imrumt2JikuUGyae6dKnfY
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
-| quantity    | integer    | null: false                    |
 | user_id     | references | null: false, foreign_key: true |
-| item_id     | references | null: false, foreign_key: true |
 
 
 ## Association
 
-- belongs_to : user
-- has_many : : items
+- belongs_to :user
+- has_many :items, through: :cart_items
+
+## cart_itemsテーブル
+
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| item_id     | references | null: false, foreign_key: true |
+| cart_id     | references | null: false, foreign_key: true |
+
+
+## Association
+
+- belongs_to :item
+- belongs_to :cart
 
 ## reservationsテーブル
 

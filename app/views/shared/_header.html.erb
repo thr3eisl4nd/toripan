@@ -28,7 +28,7 @@
       </ul>
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item"><%= link_to image_tag('cart.png', alt: "カート画像"), cart_path(@items), class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to image_tag('cart.png', alt: "カート画像"), cart_path(current_user.prepare_cart), class: "nav-link" %></li>
           <li class="nav-item"><%= link_to current_user.nickname, '', class: "nav-link" %></li>
           <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
         <% else %>

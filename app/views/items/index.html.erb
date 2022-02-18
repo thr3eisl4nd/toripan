@@ -87,7 +87,7 @@
                     ¥<%= item.price %>(税込)
                   </div>
                     <% if user_signed_in? %>
-                    <a href="#" class="btn btn-outline-secondary btn-sm">カートに入れる</a>
+                    <%= link_to "カートに入れる", item_add_to_carts_path(item.id), method: :post, class: "btn btn-outline-secondary btn-sm"  %>
                     <% end %>
                   </div>
             </div>

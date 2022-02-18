@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  belongs_to :user
+  has_many :cart_items, dependent: :destroy
   has_many :item_categories
   has_many :comments
   has_many :item_allergies

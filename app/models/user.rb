@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :items
+  has_one :cart, dependent: :destroy
   has_many :reservations
   has_many :room_users
   has_many :messages
@@ -18,4 +18,9 @@ class User < ApplicationRecord
     validates :first_name, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'is invalid. Input full-width character.' }
     validates :phonenumber, format: { with: /\A[0-9]{10,11}\z/, message: 'Input only number.' }
   end
+
+  def prepare_cart
+    cart || create_cart
+  end
+
 end

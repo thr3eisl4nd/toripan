@@ -65,7 +65,7 @@ https://docs.google.com/spreadsheets/d/1l2fZbjca_oFqyd7QZ-imrumt2JikuUGyae6dKnfY
 - 一般ユーザーのみ予約可能
 ***
 ## DB設計
-[![Image from Gyazo](https://i.gyazo.com/8a300936fe783b5e744a42e2ebbc593a.png)](https://gyazo.com/8a300936fe783b5e744a42e2ebbc593a)
+[![Image from Gyazo](https://i.gyazo.com/89d0bab69df20be259ea41eeb9585379.png)](https://gyazo.com/89d0bab69df20be259ea41eeb9585379)
 ***
 ## 画面遷移図
 [![Image from Gyazo](https://i.gyazo.com/251094fb6378edde8235fbaa28887841.png)](https://gyazo.com/251094fb6378edde8235fbaa28887841)

@@ -10,8 +10,8 @@ class Item < ApplicationRecord
 
   with_options presence: true do
     validates :image
-    validates :name
-    validates :text
+    validates :name, length: { minimum: 3, maximum: 20 }
+    validates :text, length: { maximum: 256 }
     validates :category_id, numericality: { other_than: 1, message: 'can‘t be blank.'}
     validates :price, numericality: { greater_than_or_equal_to: 220, less_than_or_equal_to: 5000, message: 'is out of setting range.' }
     validates :stock

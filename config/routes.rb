@@ -7,5 +7,6 @@ Rails.application.routes.draw do
       resources :add_to_carts, only: [:create]
       resources :delete_in_carts, only: [:create]
     end
+    resources :reservations
   end
 end
